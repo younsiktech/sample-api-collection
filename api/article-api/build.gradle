@@ -1,13 +1,15 @@
 dependencies {
 
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
 }
 
-jar.enabled=true
-bootJar.enabled=false
+jar.enabled = true
+bootJar.enabled = false

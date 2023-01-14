@@ -1,0 +1,6 @@
+dependencies {
+    // add libs
+    implementation project(":common:utils")
+}
+
+jar.enabled = true

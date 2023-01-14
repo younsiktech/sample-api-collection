@@ -37,7 +37,8 @@ subprojects {
         annotationProcessor 'org.projectlombok:lombok'
 
         // test
-        testImplementation 'org.projectlombok:lombok'
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.junit.jupiter:junit-jupiter-api'
         testImplementation 'org.junit.jupiter:junit-jupiter-engine'
     }
