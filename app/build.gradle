@@ -17,6 +17,7 @@ dependencies {
 
     // api
     implementation project(":api:member-api")
+    implementation project(":api:article-api")
 }
 
 jar.enabled = false

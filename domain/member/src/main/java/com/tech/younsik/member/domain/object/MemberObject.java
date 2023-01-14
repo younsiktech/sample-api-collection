@@ -1,9 +1,8 @@
 package com.tech.younsik.member.domain.object;
 
-import com.tech.younsik.common.utils.AddressUtils;
-import com.tech.younsik.common.utils.CalenderUtils;
-import com.tech.younsik.common.utils.EmailUtils;
-import com.tech.younsik.common.utils.MemberUtils;
+import com.tech.younsik.common.utils.CommonUtils;
+import com.tech.younsik.common.utils.DateUtils;
+import com.tech.younsik.common.utils.StringUtils;
 import java.time.LocalDate;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,13 +33,13 @@ public class MemberObject {
     this.birth = birth;
   }
 
-  public static MemberObject create(int minAge, int maxAge) {
+  public static MemberObject create(int nameLength, int minAge, int maxAge) {
     return MemberObject.builder()
-        .id(MemberUtils.createRandomId())
-        .name(MemberUtils.createRandomKorName())
-        .email(EmailUtils.createRandomEmail())
-        .address(AddressUtils.createRandomKorAddress())
-        .birth(CalenderUtils.createRandomBirth(minAge, maxAge))
+        .id(CommonUtils.createRandomId())
+        .name(StringUtils.createRandomString(nameLength))
+        .email(StringUtils.createRandomEmail())
+        .address(StringUtils.createRandomKorAddress())
+        .birth(DateUtils.createRandomBirth(minAge, maxAge))
         .build();
   }
 }

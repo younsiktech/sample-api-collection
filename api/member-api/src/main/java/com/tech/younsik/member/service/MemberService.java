@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemberService {
 
+  @Value("${app.member.name:3}")
+  private int nameLength;
+
   @Value("${app.member.age.min:20}")
   private int minAge;
 
@@ -19,14 +22,14 @@ public class MemberService {
   private int maxAge;
 
   public MemberResponse createMember() {
-    MemberObject object = MemberObject.create(minAge, maxAge);
+    MemberObject object = MemberObject.create(nameLength, minAge, maxAge);
     return MemberResponse.of(object);
   }
 
   public List<MemberResponse> createMemberList(int size) {
     List<MemberObject> objectList = new ArrayList<>();
     for (int i = 0; i < size; i++) {
-      objectList.add(MemberObject.create(minAge, maxAge));
+      objectList.add(MemberObject.create(nameLength, minAge, maxAge));
     }
     return objectList.stream().map(MemberResponse::of).toList();
   }
