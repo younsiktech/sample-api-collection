@@ -1,0 +1,18 @@
+dependencies {
+    // add libs
+    implementation "org.apache.commons:commons-lang3:3.12.0"
+    implementation "commons-io:commons-io:2.11.0"
+
+    // log
+
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'org.slf4j:log4j-over-slf4j'
+    implementation 'org.slf4j:slf4j-simple'
+
+    testImplementation 'org.slf4j:slf4j-api'
+    testImplementation 'org.slf4j:log4j-over-slf4j'
+    testImplementation 'org.slf4j:slf4j-simple'
+}
+
+jar.enabled = true
+bootJar.enabled = false

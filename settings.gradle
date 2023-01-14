@@ -1,0 +1,17 @@
+rootProject.name = 'sample-api-collection'
+
+include 'app'
+
+include 'api'
+include 'api:member-api'
+include 'api:product-api'
+include 'api:article-api'
+
+include 'domain'
+include 'domain:member'
+include 'domain:product'
+include 'domain:article'
+
+include 'common'
+include 'common:utils'
+include 'common:models'
