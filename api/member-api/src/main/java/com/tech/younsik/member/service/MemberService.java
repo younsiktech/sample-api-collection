@@ -20,7 +20,6 @@ public class MemberService {
 
   public MemberResponse createMember() {
     MemberObject object = MemberObject.create(minAge, maxAge);
-    log.info("Object : {}", object.toString());
     return MemberResponse.of(object);
   }
 
@@ -29,7 +28,6 @@ public class MemberService {
     for (int i = 0; i < size; i++) {
       objectList.add(MemberObject.create(minAge, maxAge));
     }
-    log.info("ObjectList : {}", objectList.toString());
     return objectList.stream().map(MemberResponse::of).toList();
   }
 }

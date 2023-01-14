@@ -14,13 +14,7 @@ public class CalenderUtils {
     long maxEpoch = LocalDate.of(current.getYear() - minAge, 12, 31).toEpochDay();
     long minEpoch = LocalDate.of(current.getYear() - maxAge, 1, 1).toEpochDay();
 
-
     long revertEpoch = Math.max(Math.abs(maxEpoch), Math.abs(minEpoch));
-
-    log.info("MaxEpoch: {}", maxEpoch);
-    log.info("MinEpoch: {}", minEpoch);
-    log.info("revertEpoch: {}", revertEpoch);
-
 
     maxEpoch += revertEpoch;
     minEpoch += revertEpoch;
@@ -33,6 +27,6 @@ public class CalenderUtils {
       minEpoch = maxEpoch;
     }
 
-    return LocalDate.ofEpochDay(RandomUtils.nextLong(minEpoch, maxEpoch)-revertEpoch);
+    return LocalDate.ofEpochDay(RandomUtils.nextLong(minEpoch, maxEpoch) - revertEpoch);
   }
 }
